@@ -1,88 +1,75 @@
-# cbc-statistical-analysis
-Statistical analysis of complete blood count parameters across hematological diagnostic groups, with a focus on leukemia.
-# Statistical Analysis of Complete Blood Count (CBC) Parameters Across Hematological Diagnostic Groups
+# Statistical Analysis of Complete Blood Count (CBC) Parameters in Leukemia and Non-Leukemia Groups
 
 ## Project Overview
 
-This project investigates the statistical distributions, variability, and relationships of Complete Blood Count (CBC) parameters across hematological diagnostic groups, with particular emphasis on leukemia.
+This project investigates the distribution, variability, and relationships of selected Complete Blood Count (CBC) parameters, focusing primarily on comparisons between leukemia and non-leukemia groups.
 
-Using a publicly available CBC dataset, the study will apply descriptive statistics, measures of variability, hypothesis testing, correlation analysis, data visualization, and exploratory predictive modelling to identify and quantify patterns in blood parameters.
+Using the publicly available LeukoAlert dataset, the study applies descriptive statistics, data visualisation, hypothesis testing, correlation analysis, and exploratory predictive modelling to identify and quantify patterns associated with leukemia status.
 
-## Research Motivation
+## General Objective
 
-Complete Blood Count tests measure important blood components, including white blood cells (WBC), red blood cells (RBC), haemoglobin (HGB), haematocrit (HCT), and platelets (PLT).
+To statistically analyse and compare selected CBC parameters between leukemia and non-leukemia groups.
 
-Statistical analysis of these parameters can reveal differences and associations across hematological conditions, providing insights into their potential value in distinguishing diagnostic groups, particularly leukemia.
+## Specific Objectives
 
-## Project Objectives
+1. Describe the distributions and central tendencies of selected CBC parameters in each group.
+2. Quantify and compare CBC parameter variability between groups.
+3. Test for differences in CBC parameters between groups, reporting effect sizes where appropriate.
+4. Examine correlations among selected CBC parameters and their relationships with leukemia status.
+5. Explore the ability of selected CBC parameters to distinguish leukemia from non-leukemia records using an appropriately evaluated statistical classification model.
 
-### General Objective
+## Dataset
 
-To statistically analyse and compare CBC parameters across hematological diagnostic groups, with particular emphasis on leukemia.
+**Source:** [LeukoAlert — Mendeley Data, Version 1](https://data.mendeley.com/datasets/vc7kwnyppz/1)
 
-### Specific Objectives
+**DOI:** [10.17632/vc7kwnyppz.1](https://doi.org/10.17632/vc7kwnyppz.1)
 
-1.  Determine the distribution and central tendency of selected CBC parameters across diagnostic groups.
+The dataset contains de-identified clinical CBC records from development, multicentre validation, and real-world evaluation cohorts. The analysis will focus on clearly documented CBC parameters, such as white blood cell count (WBC), red blood cell count (RBC), haemoglobin, haematocrit, and platelet count, subject to verification of their availability and units.
 
-2.  Quantify and compare CBC parameter variability across diagnostic groups.
+The primary comparison is leukemia versus non-leukemia. Further diagnostic-group or subtype comparisons will only be conducted if reliable labels and adequate group sizes are available.
 
-3.  Evaluate differences in CBC parameters across diagnostic groups.
+## Tools and Technologies
 
-4. Assess the strength and direction of relationships among selected CBC parameters.
+- **R:** Data cleaning, statistical analysis, hypothesis testing, correlation analysis, visualisation, and exploratory predictive modelling.
+- **RStudio:** Development environment for writing and running R scripts and notebooks.
+- **GitHub:** Version control, project documentation, and team collaboration.
 
-5. **Predictive Modelling:Evaluate the ability of selected CBC parameters to distinguish leukemia from non-leukemia cases using exploratory classification models and appropriate performance metrics.
+## Analysis Approach
 
-# Research Questions
+1. **Data preparation:** Inspect variables, verify diagnostic labels and units, assess missing values and outliers, and check cohort membership and repeated records.
+2. **Descriptive analysis:** Calculate appropriate summary statistics and visualise CBC parameter distributions.
+3. **Statistical comparisons:** Apply suitable statistical tests based on data characteristics and report effect sizes and confidence intervals where appropriate.
+4. **Correlation analysis:** Assess relationships among selected CBC parameters.
+5. **Exploratory modelling:** If feasible, develop and evaluate a classification model using suitable validation procedures and safeguards against data leakage.
 
-1. How do the distributions of selected CBC parameters differ across hematological diagnostic groups?
-2. Which CBC parameters exhibit the greatest variability within and between diagnostic groups?
-3. Are there statistically significant differences in CBC parameters across diagnostic groups?
-4. What are the strength and direction of relationships among selected CBC parameters?
-5. How effectively can selected CBC parameters distinguish leukemia from non-leukemia cases?
+All statistical analyses and visualisations will be performed in R using appropriate packages.
 
-## Tools and Methods
+## Project Structure
 
-- **Programming Language:** R
-- **Version Control and Collaboration:** Git and GitHub
-- **Descriptive Statistics:** Mean, median, quartiles, minimum, and maximum
-- **Measures of Variability:** Variance, standard deviation, IQR, and CV
-- **Statistical Inference:** Parametric and non-parametric hypothesis tests, effect sizes, and confidence intervals
-- **Correlation Analysis:** Pearson and Spearman correlation
-- **Predictive Modelling:** Exploratory classification using logistic regression or other suitable models
-- **Data Visualization:** Histograms, boxplots, correlation heatmaps, and other relevant statistical plots
-
-## Research Methodology
-
-The study will adopt a quantitative, observational research approach using secondary CBC data.
-
-The analytical process will involve:
-
-1. **Data Inspection:** Examine dataset structure, diagnostic categories, variables, and sample composition.
-2. **Data Preparation:** Assess missing values, outliers, inconsistencies, and perform necessary cleaning.
-3. **Exploratory Data Analysis:** Summarize distributions, central tendencies, and variability across diagnostic groups.
-4. **Statistical Analysis:** Conduct hypothesis tests, estimate associations, and interpret statistical findings.
-5. **Predictive Modelling:** Develop and evaluate exploratory classification models where data suitability permits.
-6. **Reporting:** Document analytical procedures, visualizations, results, and conclusions in a reproducible format.
+```text
+CBC-Analysis/
+├── data/
+│   ├── raw/              # Original dataset
+│   └── processed/        # Cleaned data
+├── R/                    # Reusable R scripts
+├── notebooks/            # Exploratory analysis
+├── results/              # Figures and tables
+└── README.md
+```
 
 ## Scope and Limitations
 
-This is an exploratory statistical research project using publicly available secondary data.
+This is a statistical research project, not a clinical diagnostic tool. Findings will be interpreted as associations within the available data and may be affected by missing values, class imbalance, cohort differences, and repeated measurements. Predictive results, if produced, will be treated as exploratory and will not establish clinical diagnostic validity.
 
-The findings will depend on dataset quality, sample size, diagnostic accuracy, and representativeness. Potential limitations include missing observations, class imbalance, confounding factors, and differences in laboratory measurements.
-
-Statistical significance will not necessarily imply clinical significance. Any predictive models developed will serve exploratory research purposes and will not constitute clinically validated diagnostic tools.
-
-## Expected Outcomes
-
-The project aims to produce:
-
-1. Descriptive statistical summaries and visualizations of selected CBC parameters.
-2. Quantitative comparisons of variability across diagnostic groups.
-3. Statistical evidence of differences and correlations among CBC parameters.
-4. An exploratory assessment of the discriminatory value of CBC parameters for leukemia classification.
-5. A documented and reproducible statistical analysis using R and GitHub.
+CBC parameters alone cannot be assumed to confirm or exclude leukemia.
 
 ## Contributors
 
-- **Researcher 1:** Njeri Ndung'u
-- **Researcher 2:** Maxwell Githongo Chege
+- **Njeri Ndung'u** — Project contributor
+- **Maxwell Chege** — Project contributor
+
+## Scope and Limitations
+
+This is a statistical research project, not a clinical diagnostic tool. Findings will be interpreted as associations within the available data and may be affected by missing values, class imbalance, cohort differences, and repeated measurements. Predictive results, if produced, will be treated as exploratory and will not establish clinical diagnostic validity.
+
+CBC parameters alone cannot be assumed to confirm or exclude leukemia.
